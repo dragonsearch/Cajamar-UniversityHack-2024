@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "losca"
+version = "0.1.0"
+description = "Cajamar UniversityHack 2024"
+authors = ["Your Name <you@example.com>"]
+readme = "losca/doc/readme.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+torch = "^2.4.0"
+scikit-learn = "^1.5.1"
+optuna = "^3.6.1"
+pandas = "^2.2.2"
+matplotlib = "^3.9.2"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
