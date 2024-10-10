@@ -14,6 +14,7 @@ pandas = "^2.2.2"
 matplotlib = "^3.9.2"
 openpyxl = "^3.1.5"
 ydata-profiling = "^4.10.0"
+lazypredict-nightly = "^0.3.2"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.5"
