@@ -51,4 +51,17 @@ def mean_t_h_componentes(th, datetime_init, datetime_end):
     main_dock_th_mean['h_al_prod_th'] = th[(th['datetime_th'].astype(str).str[:-6] == datetime_end)]['h_al_prod_th'].values[0]
                                            
     return main_dock_th_mean
+
+
+def t_h_biocent(df, datetime_init, datetime_end, type):
+    if type == 'biorreactor':
+        df_dttm_range = df[(df['datetime_th'].astype(str).str[:-6] >= datetime_init) 
+                           & (df['datetime_th'].astype(str).str[:-6] <= datetime_end)].loc[:,'t_bio_th':'h_bio_th'].mean().to_frame().transpose() 
+    elif type == 'centrifuga':
+        df_dttm_range = df[(df['datetime_th'].astype(str).str[:-6] >= datetime_init) 
+                           & (df['datetime_th'].astype(str).str[:-6] <= datetime_end)].loc[:,'t_cent_th':'h_cent_th'].mean().to_frame().transpose()
+    else:
+        raise ValueError('type must be "biorreactor" or "centrifuga"')
+    
+    return df_dttm_range
     
